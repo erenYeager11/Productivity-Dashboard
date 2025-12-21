@@ -39,7 +39,24 @@
         <!-- Full Page Sections -->
         <section class="fullElems todo-list-fullpage">
             <button class="back" id="0">Close</button>
-            <h1>To-do Page</h1>
+            <h2>Your Personalised Task List</h2>
+            <div class="todo-container">
+                <div class="addTask">
+                    <form>
+                        <input id="task-input" type="text" placeholder="Enter Task">
+                        <!-- textarea ki height or width control karne k liye uski no of rows or column k through kar sakte hai -->
+                        <textarea placeholder="Enter Details" name="" id="textArea" rows="10" cols="30"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" id="check">
+                            <label for="check">Mark as Important!</label>
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+                </div>
+                <div class="allTasks">
+                    
+                </div>
+            </div>
         </section>
         <section class="fullElems daily-planner-fullpage">
             <button class="back" id="1">Close</button>
