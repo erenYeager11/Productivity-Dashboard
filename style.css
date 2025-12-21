@@ -1,0 +1,103 @@
+/*---- Fonts ----*/
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./Fonts/AeonikTRIAL-Light.otf);
+}
+@font-face {
+    font-family: aeonik;
+    font-weight: 400;
+    src: url(./Fonts/AeonikTRIAL-Regular.otf);
+}
+@font-face {
+    font-family: aeonik;
+    font-weight: 600;
+    src: url(./Fonts/AeonikTRIAL-Bold.otf);
+}
+/*---- UI Theme ----*/
+:root{
+    --pri:#393E46;
+    --sec:#948979;
+    --tri1:#DFD0B8;
+    --tri2:#222831;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: var(--tri1);
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+}
+main{
+    height: 100%;
+    width: 100%;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--tri1);
+}
+/*---- Dashboard Cards ----*/
+section.allElems{
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+    position: absolute;
+
+}
+.elems{
+    background-color: var(--tri1);
+    border-radius: 10px;
+    height: 400px;
+    width: 330px;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.2s;
+}
+.elems img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.elems h2{
+    position: absolute;
+    font-weight: 400;
+    font-size: 2rem;
+    bottom: 4%;
+    right: 5%;
+}
+.elems:active{
+    scale: 0.95;
+}
+
+/*---- Dashboard Full Page Open on Click ----*/
+section.fullElems{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    font-size: 3rem;
+    display: none;
+    position: absolute;
+}
+.back{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 11px;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
