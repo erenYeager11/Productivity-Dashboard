@@ -89,3 +89,32 @@ function todoList(params) {
 }
 
 todoList();
+
+//DAILY PLANNER LOLGIC
+
+
+//Ek Array banata hai 18 values ka jo ek ghante k hisab se chalenge 6 baje se
+//index ka use karke jo automatically values generate karega start - end 
+
+//TO UNDERSTAND Array.from()
+//Question-Jab mere paas koi array nahi hai, sirf number hai ki mujhe kitne items chahiye, tab array kaise banu?
+//Answer-Main JS ko sirf bata deta hoon ki mujhe kitne items chahiye,
+// baaki kaam JS khud kar leta hai.
+
+// Jab sirf quantity (kitni items chahiye) pata ho
+// aur actual values baad me generate karni ho,
+// tab Array.from() ka use karte hain
+
+var hours = Array.from({length:18}, (_, idx)=>`${6+idx}:00 - ${7+idx}:00`)
+
+var wholeDaySum = ''
+hours.forEach(function(elem) {
+  wholeDaySum = wholeDaySum + ` <div class="day-planner-time">
+                    <p>${elem}</p>
+                    <input type="text" placeholder="...">
+                </div>`
+})
+
+var dayPlanner = document.querySelector('.day-planner')
+
+dayPlanner.innerHTML = wholeDaySum
