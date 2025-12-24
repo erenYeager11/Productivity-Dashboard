@@ -38,6 +38,7 @@ main{
     width: 100%;
 }
 /*---- Dashboard Cards ----*/
+
 section.allElems{
     height: 100%;
     width: 100%;
@@ -241,9 +242,7 @@ section.fullElems{
 
 /*---- Dashboard Full DAILY PLANNER STYLING ----*/
 
-.daily-planner-fullpage{
-    display: block;
-}
+
 .daily-planner-fullpage h2{
     font-size: 3rem;
 }
@@ -284,3 +283,4 @@ section.fullElems{
     padding-top: 34px;
     outline: none;
 }
+

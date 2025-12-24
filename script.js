@@ -93,6 +93,11 @@ todoList();
 //DAILY PLANNER LOLGIC
 
 
+function dailyPlanner () {
+  var dayPlanner = document.querySelector('.day-planner')
+
+var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
+
 //Ek Array banata hai 18 values ka jo ek ghante k hisab se chalenge 6 baje se
 //index ka use karke jo automatically values generate karega start - end 
 
@@ -105,16 +110,33 @@ todoList();
 // aur actual values baad me generate karni ho,
 // tab Array.from() ka use karte hain
 
-var hours = Array.from({length:18}, (_, idx)=>`${6+idx}:00 - ${7+idx}:00`)
+var hours = Array.from({ length: 18 }, (_, idx)=>`${6+idx}:00 - ${7+idx}:00`)
+
 
 var wholeDaySum = ''
-hours.forEach(function(elem) {
+
+hours.forEach(function(elem, idx) {
+  
+  var savedData = dayPlanData[idx] || ''
+  
   wholeDaySum = wholeDaySum + ` <div class="day-planner-time">
-                    <p>${elem}</p>
-                    <input type="text" placeholder="...">
-                </div>`
+  <p>${elem}</p>
+  <input id=${idx} type="text" placeholder="..." value = ${savedData}>
+  </div>`
 })
 
-var dayPlanner = document.querySelector('.day-planner')
 
 dayPlanner.innerHTML = wholeDaySum
+
+var dayPlannerInput = document.querySelectorAll('.day-planner input')
+
+dayPlannerInput.forEach(function (elem){
+
+  elem.addEventListener('input', function () {
+    dayPlanData[elem.id] = elem.value
+
+    localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
+  })
+})
+}
+dailyPlanner()
