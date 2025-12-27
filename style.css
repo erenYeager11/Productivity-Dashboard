@@ -284,3 +284,78 @@ section.fullElems{
     outline: none;
 }
 
+/*---- Dashboard Full MOTIVATIONAL QUOTES STYLING ----*/
+
+.motivational-fullpage{
+    /* display: block; */
+    position: relative;
+    
+}
+.motivational-fullpage .motivation-container{
+    height: 500px;
+    width: 60%;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.motivational-fullpage .motivation-container::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--tri2);
+    border-radius: 50px;
+    scale: 1.15;
+    z-index: 8;
+    filter: blur(100px);
+}
+.motivational-fullpage .motivation-container .motivation-wrapper{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: var(--tri1);
+    border-radius: 40px;
+    padding: 15px;
+}
+.motivation-1{
+    padding: 20px;
+    background-color: var(--pri);
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+}
+.motivation-1 h2{
+    background-color: var(--pri);
+    border-radius: 20px;
+    text-align: right;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+.motivation-2{
+    color: var(--tri2); 
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.motivation-2 h1{
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--tri2);
+}
+.motivation-3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.motivation-3 h2{
+    width: fit-content;
+    background-color: var(--pri);
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: right;
+}

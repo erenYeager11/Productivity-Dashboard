@@ -92,7 +92,6 @@ todoList();
 
 //DAILY PLANNER LOLGIC
 
-
 function dailyPlanner () {
   var dayPlanner = document.querySelector('.day-planner')
 
@@ -140,3 +139,30 @@ dayPlannerInput.forEach(function (elem){
 })
 }
 dailyPlanner()
+
+function motivationSection(){
+  
+var motivationQuote = document.querySelector('.motivation-2 h1')
+var motivationAuthor = document.querySelector('.motivation-3 h2')
+
+async function fetchQuote() {
+  try {
+    let response = await fetch("https://api.quotable.io/random");
+    if (!response.ok) {
+      throw new Error("API not responding properly");
+    }
+    var data = await response.json();
+  } catch (error) {
+    motivationQuote.innerHTML ="Quote not available. Try again later"
+    motivationAuthor.innerHTML = "---"
+  }
+    
+  motivationQuote.innerHTML = data.content
+  motivationAuthor.innerHTML = data.author
+}
+
+
+fetchQuote()
+}
+motivationSection()
+
